@@ -12,7 +12,7 @@ import (
 // Valid symbols are '.', '-', space, and '/'.
 func IsMorse(phrase string) bool {
 	for _, symbol := range phrase {
-		if symbol != '.' && symbol != '-' && symbol != ' ' && symbol != '/' {
+		if !strings.ContainsRune(".-/ ", symbol) {
 			return false
 		}
 	}
